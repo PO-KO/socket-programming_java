@@ -17,10 +17,11 @@ public class App {
             DataInputStream serverRead = new DataInputStream(server.getInputStream());
             DataOutputStream serverWrite = new DataOutputStream(server.getOutputStream());
 
-            String str = "";
-            while (!(str == null)) {
-                str = serverRead.readUTF();
+            boolean isEmpty = true;
+            while (!isEmpty) {
+                String str = serverRead.readUTF();
                 System.out.println(str);
+
             }
 
             Scanner clientInput = new Scanner(System.in);
